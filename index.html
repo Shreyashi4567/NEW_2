@@ -5,16 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+      @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
       body,
       html {
         margin: 0;
         padding: 0;
-        color: white;
+        color: black;
+
         font-family: "Poppins";
       }
       a {
-        color: white;
+        color: black;
         text-decoration: none;
       }
       .sub-menus {
@@ -26,7 +29,7 @@
         display: inline-block;
         padding: 2rem;
       }
-      #spline-background {
+      /*#spline-background {
         position: fixed;
         top: 0;
         left: 0;
@@ -34,22 +37,62 @@
         height: 100vh;
         z-index: -1;
         border: none;
-      }
-      .title{
+      }*/
+      .title {
         text-align: center;
         font-size: 30vh;
       }
-     
+      #mission-story,
+      #mission-vision {
+        box-sizing: border-box;
+        border: 2px solid black;
+        background-color: white;
+        color: lightpink;
+        max-width: 50%;
+        padding: 2em;
+        margin: 2em;
+      }
+      #second-div {
+        display: flex;
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      .section {
+        flex: 1; /* Allow sections to grow equally */
+        min-width: 250px; /* Minimum width for responsiveness */
+        padding: 20px;
+        background-color: #ffffff; /* White background for sections */
+        border: 1px solid #ddd; /* Light border for separation */
+        margin: 10px; /* Space between sections */
+        border-radius: 8px; /* Rounded corners */
+      }
+      .story-container {
+        margin: 5rem;
+        display: flex;
+      }
+      .card {
+        width: 100%;
+
+        margin: 2rem;
+        border: 2px solid #ffcaaf;
+        border-radius: 5px;
+      }
     </style>
   </head>
   <body>
-    <iframe
+    <!--<iframe
       id="spline-background"
       src="https://my.spline.design/moonparallax-604e46fda0d01f806fe3b68ceda375c3/"
       frameborder="0"
-      width="100%"
-      height="100%"
-    ></iframe>
+      max-width="100%"
+      max-height="100%"
+    ></iframe>-->
+    <!--<iframe id="spline-background" src='https://my.spline.design/roomgirlworkingcopy-7397af400a720b88da0f4c92aa38a941/' frameborder='0' width='100%' height='100%'></iframe>-->
+
     <div id="hero">
       <header id="nav-bar">
         <a href="index.html"><img src="" />Name</a>
@@ -67,6 +110,74 @@
         </nav>
       </header>
     </div>
-   
+    <div>
+      <h1 class="title">
+        SHE<span class="title" style="color: lightpink">SAFE.</span>
+      </h1>
+    </div>
+
+    <div class="container">
+      <div class="section">
+        <p style="color: #555">OUR STORY</p>
+        <scan>
+          At [Website Name], we are committed to empower women by addressing the
+          challenges of safety in public spaces and at the workplace. Our
+          mission: To provide resources, tools, and a community that helps women
+          navigate these challenges with confidence. We believe that every woman
+          deserves to feel secure and respected in all areas of life.
+        </scan>
+      </div>
+
+      <div class="section">
+        <p style="color: #555">OUR VISION: UNITY FOR SAFETY</p>
+        <scan>
+          Informative articles, safety tips, and innovative solutions aim to
+          raise awareness about the importance of gender equality and security.
+          Our platform is designed to foster a space where women can learn,
+          share, and support one another. Join us on this journey as we strive
+          to create safer environments, empowering women to thrive without fear.
+        </scan>
+      </div>
+    </div>
+    <div id="story-title">
+      <p style="font-size: 50px; margin: 0.2em">OUR INSPIRATION</p>
+      <scan>
+        From Shadows to Strength: From Embracing Fear to Igniting Change
+      </scan>
+    </div>
+    <div class="story-container">
+      <div class="card">
+        <div class="imgBox"><img src="Untitled design (8).png"  /></div>
+        <div class="content" style="padding: 1em">
+          Plot: A Bustling city, there lived a woman named Maya. A talented
+          graphic designer, she found joy in crafting vibrant worlds on her
+          screen. Yet, beneath her vibrant exterior lay a haunting truth. One
+          evening, as she was returning home from a late-night client meeting,
+          she became a victim of an attempted mugging. The incident left her
+          shaken, her sense of safety shattered like glass.
+        </div>
+      </div>
+      <div class="card">
+        <div class="imgBox"></div>
+        <div class="content">
+          For weeks, Maya struggled to reclaim her former self. The vibrant
+          colors she once painted now appeared dull, and the world outside felt
+          like a lurking predator. Fear gripped her heart, chaining her to her
+          apartment. She avoided late nights and crowded places, retreating into
+          the safety of her four walls. But within those walls, a fire
+          flickered—a determination to rise above the darkness that had engulfed
+          her. One fateful day, as she scrolled through her social media, Maya
+          stumbled upon a local self-defense workshop for women. It was a simple
+          ad, but it sparked a flicker of hope within her. She hesitated for a
+          moment, recalling the fear that had kept her silent for so long. But
+          then she remembered the vibrant woman she once was and the designs she
+          had brought to life. Inspired, she signed up.
+        </div>
+      </div>
+      <div class="card">
+        <div class="imgBox"></div>
+        <div class="content"></div>
+      </div>
+    </div>
   </body>
 </html>
