@@ -78,26 +78,38 @@
         width: 100%;
         height: auto;
         overflow: hidden;
-        margin: 2rem;
+        margin: 0.5rem;
         border: 2px solid #ffcaaf;
         border-radius: 5px;
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
       }
+      .card:hover{
+        transform: scale(1.05);
+      }
       .imgBox {
         max-width: 100%;
-        width: 100%; /* Ensures the image box fits the full width of the card */
-        height: auto; /* Keeps the height auto to maintain aspect ratio */
+        width: 100%; 
+        height: auto; 
         display: flex;
-        justify-content: center; /* Centers the image horizontally */
-        align-items: center; /* Centers the image vertically */
+        justify-content: center;
+        align-items: center;
         overflow: hidden;
       }
       .imgBox img {
-        max-width: 100%; /* Ensures the image doesn't exceed the box's width */
-        height: auto; /* Maintains the image's aspect ratio */
-        object-fit: contain; /* Ensures the image is fully visible without being cut */
+        max-width: 100%; 
+        height: auto; 
+        object-fit: contain; 
+        cursor: default;
+        transition: box-shadow 0.3s ease;
+      }
+      .imgBox img:hover{
+        cursor: pointer;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 1);
+      }
+      .imgBox:hover + .content{
+        display: block;
       }
     </style>
   </head>
@@ -165,26 +177,30 @@
     </div>
     <div class="story-container">
       <div class="card">
-        <div class="imgBox"><img src="Untitled design (8).png" /></div>
-        <div class="content" style="padding: 1em">
+        <div class="imgBox"><img src="1.png" /></div>
+        <div class="content" style="padding: 1em; display: none;">
           Plot: A Bustling city, there lived a woman named Maya. A talented
-          graphic designer, she found joy in crafting vibrant worlds on her
-          screen. Yet, beneath her vibrant exterior lay a haunting truth. One
+          graphic designer. Yet, one
           evening, as she was returning home from a late-night client meeting,
-          she became a victim of an attempted mugging. The incident left her
+          she became victim to an attempted mugging. The incident left her
           shaken, her sense of safety shattered like glass.
         </div>
       </div>
       <div class="card">
-        <div class="imgBox"></div>
-        <div class="content">
-          For weeks, Maya struggled to reclaim her former self. The vibrant
-          colors she once painted now appeared dull, and the world outside felt
-          like a lurking predator. Fear gripped her heart, chaining her to her
-          apartment. She avoided late nights and crowded places, retreating into
+        <div class="imgBox"><img src="2.png"></div>
+        <div class="content" style="padding: 1em; display: none;">
+          For weeks, Maya suffered. The vibrant
+          colors became dull, and the world outside felt
+          a lurking predator. She avoided late nights, retreating into
           the safety of her four walls. But within those walls, a fire
           flickered—a determination to rise above the darkness that had engulfed
-          her. One fateful day, as she scrolled through her social media, Maya
+          her.
+        </div>
+      </div>
+      <div class="card">
+        <div class="imgBox"><img src="3.png"></div>
+        <div class="content" style="padding: 1em; display: none;">
+          One fateful day, as she scrolled through her social media, Maya
           stumbled upon a local self-defense workshop for women. It was a simple
           ad, but it sparked a flicker of hope within her. She hesitated for a
           moment, recalling the fear that had kept her silent for so long. But
@@ -192,10 +208,23 @@
           had brought to life. Inspired, she signed up.
         </div>
       </div>
-      <div class="card">
-        <div class="imgBox"></div>
-        <div class="content"></div>
-      </div>
     </div>
+    <script>
+      document.querySelectorAll('.imgBox img').forEach((img, index) => {
+        img.addEventListener('click', function() {
+          // Toggle the 'clicked' class to add the shadow and pointer change
+          this.classList.toggle('clicked');
+    
+          // Find the content div within the same card and toggle its visibility
+          const contentDiv = this.closest('.card').querySelector('.content');
+          if (contentDiv.style.display === "none" || contentDiv.style.display === "") {
+            contentDiv.style.display = "block";
+          } else {
+            contentDiv.style.display = "none";
+          }
+        });
+      });
+    </script>
+    
   </body>
 </html>
