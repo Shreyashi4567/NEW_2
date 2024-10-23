@@ -35,7 +35,7 @@ html {
 
 
 .para {
-    background-image: url('./img/parallax.png') ;
+    background-image: url('parallax.png') ;
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
@@ -425,7 +425,7 @@ list-style: none;
 
     /* Background section with overlay */
 .background-container {
-    background-image: url('img/back-2.png');
+    background-image: url('back-2.png');
     background-size: cover;
     background-position: center;
     height: 100vh;
