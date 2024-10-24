@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>She Safe | Empowering Safety, Protecting Futures</title>
-    <link rel="stylesheet" href="style.css">
     <style>
-              @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
-        body{
-            font-family: "Poppins";
-        }
-        #spline-background {
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins";
+      }
+      html {
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+      }
+      #spline-background {
         position: fixed;
         top: 0;
         left: 0;
@@ -20,9 +24,800 @@
         z-index: -1;
         border: none;
       }
+      .land {
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        z-index: -1;
+        background-color: black;
+        opacity: 0.5;
+        background-attachment: fixed;
+        /* background-color: antiquewhite; */
+      }
+
+      .para {
+        background-image: url("parallax.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        height: 100vh;
+        width: 100vw;
+        top: 0;
+        left: 0;
+        opacity: 0.1;
+        background-attachment: fixed;
+        z-index: -1;
+      }
+
+      .show {
+        background-color: black;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        z-index: -2;
+      }
+
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+        height: 60px;
+        position: fixed;
+        top: 0;
+        width: 100vw;
+        z-index: 30;
+        padding: 0 50px;
+      }
+
+      .nav .logo {
+        /* color: white; */
+        font-size: 30px;
+        margin: 0 50px;
+      }
+
+      .nav ul {
+        display: flex;
+        text-decoration: none;
+      }
+
+      .nav ul li {
+        color: white;
+        margin: 0 10px;
+        list-style: none;
+      }
+
+      .nav ul li a {
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+      }
+
+      .nav ul li a:hover {
+        transition: ease-in 0.5s;
+        color: rgb(255, 0, 230);
+      }
+
+      .logo {
+        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+        color: rgb(255, 0, 200);
+        cursor: pointer;
+      }
+
+      .main-content {
+        position: absolute;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 3;
+        top: 0;
+        left: 0;
+        flex-direction: column;
+      }
+
+      .curved-text {
+        position: relative;
+        /* width: 300px;
+    height: 150px; */
+        margin: 0 auto;
+      }
+
+      .curved-text span {
+        position: absolute;
+        transform-origin: bottom center;
+        font-size: 100px;
+        color: chartreuse;
+        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      }
+
+      .curved-text span:nth-child(1) {
+        transform: rotate(-21deg) translateX(-50%);
+        left: 158px;
+        top: 264px;
+      }
+      .curved-text span:nth-child(2) {
+        transform: rotate(-13deg) translateX(-50%);
+        left: 320px;
+        top: 218px;
+      }
+      .curved-text span:nth-child(3) {
+        transform: rotate(-9deg) translateX(-50%);
+        left: 516px;
+        top: 181px;
+      }
+      .curved-text span:nth-child(4) {
+        transform: rotate(-2deg) translateX(-50%);
+        left: 692px;
+        top: 170px;
+      }
+      .curved-text span:nth-child(5) {
+        transform: rotate(3deg) translateX(-50%);
+        left: 864px;
+        top: 174px;
+      }
+      .curved-text span:nth-child(6) {
+        transform: rotate(11deg) translateX(-50%);
+        left: 1064px;
+        top: 202px;
+      }
+      .curved-text span:nth-child(7) {
+        transform: rotate(18deg) translateX(-50%);
+        left: 1252px;
+        top: 252px;
+      }
+      .curved-text span:nth-child(8) {
+        transform: rotate(60deg) translateX(-50%);
+        left: 125px;
+        top: 120px;
+      }
+
+      .sustain-info {
+        background-color: rgb(12, 11, 13);
+        color: white;
+      }
+
+      .tagline {
+        font-size: 4rem;
+        color: white;
+        /* padding-top: 50px; */
+        font-family: "Poiret One", sans-serif;
+        font-weight: 900;
+        font-style: normal;
+        text-align: center;
+        color: rgb(228, 228, 145);
+        letter-spacing: 5px;
+        line-height: 1.7;
+      }
+
+      .sustain-info {
+        height: 100vh;
+        margin-top: 100vh;
+        width: 100vw;
+      }
+
+      .f {
+        color: white;
+      }
+      .s {
+        color: rgb(255, 0, 179);
+      }
+
+      .subline {
+        color: white;
+        font-size: 18px;
+        letter-spacing: 5px;
+      }
+
+      @media only screen and (max-width: 565px) {
+        .nav {
+          flex-direction: column;
+        }
+        .subline {
+          font-size: 15px;
+          margin-top: 10px;
+          text-align: center;
+        }
+        .tagline {
+          padding: 0 5px;
+        }
+      }
+
+      @media only screen and (max-width: 380px) {
+        .nav {
+          flex-direction: column;
+        }
+        .subline {
+          font-size: 15px;
+          margin-top: 10px;
+          text-align: center;
+          padding: 0 5px;
+        }
+        .tagline {
+          padding: 0 5px;
+          font-size: 3rem;
+        }
+        a {
+          font-size: 12px;
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        /* background-color: #f0f0f0; */
+      }
+
+      .slider-container {
+        position: relative;
+        max-width: 1000px;
+        margin: 50px auto;
+        overflow: hidden;
+        background-color: wheat;
+      }
+
+      .slider {
+        display: flex;
+        transition: transform 0.5s ease;
+      }
+
+      .slide {
+        min-width: 100%;
+        height: 300px;
+        background-color: #f5f5f5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(250 200 227);
+      }
+
+      .fact {
+        text-align: center;
+      }
+
+      .stat-text {
+        font-size: 24px;
+        font-weight: bold;
+        color: #000;
+        margin-bottom: 10px;
+      }
+
+      .source-text {
+        font-size: 14px;
+        color: #b0b0b0;
+      }
+
+      .prev,
+      .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.3);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+      }
+
+      .prev {
+        left: 10px;
+      }
+
+      .next {
+        right: 10px;
+      }
+
+      .dots-container {
+        text-align: center;
+        padding: 10px 0;
+        /* background-color: #f5f5f5; */
+        background-color: rgb(255 245 245);
+      }
+
+      .dot {
+        height: 15px;
+        width: 15px;
+        margin: 0 5px;
+        background-color: #d3d3d3;
+        border-radius: 50%;
+        display: inline-block;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .active,
+      .dot:hover {
+        background-color: #555;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .stat-text {
+          font-size: 18px;
+        }
+
+        .slide {
+          height: 250px;
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      .laws-container {
+        /* max-width: 1200px; */
+        width: 100%;
+        font-family: Arial, sans-serif;
+        background-color: #fff5cf;
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+      }
+
+      h1 {
+        margin-bottom: 30px;
+        text-align: center;
+        color: #333;
+      }
+
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+
+      .card {
+        background-size: cover;
+        background-position: center;
+        height: 250px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgb(255, 255, 255);
+        border-radius: 8px;
+        overflow: hidden;
+        transition: transform 0.3s;
+        cursor: pointer;
+      }
+
+      .card:hover {
+        transform: scale(1.05);
+      }
+
+      .card-content {
+        /* background: rgba(0, 0, 0, 0.5); */
+        padding: 20px;
+        text-align: center;
+        border-radius: 8px;
+      }
+
+      .card h2 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .card p {
+        font-size: 14px;
+        font-weight: light;
+        color: wheat;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .card-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .card {
+          height: 200px;
+        }
+
+        .card h2 {
+          font-size: 16px;
+        }
+
+        .card p {
+          font-size: 12px;
+        }
+      }
+      .background-container {
+        background-image: url("back-2.png");
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-attachment: fixed;
+      }
+
+      .overlay {
+        background-color: rgba(0, 0, 139, 0.8);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .content {
+        color: white;
+        text-align: center;
+        z-index: 2;
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 50px;
+        color: #ffd700;
+        margin-bottom: 30px;
+      }
+
+      p {
+        font-size: 16px;
+        color: #ffffff;
+        margin: 0 20px;
+      }
+
+      .gallery-container {
+        margin: 50px auto;
+        max-width: 1200px;
+        padding: 20px;
+      }
+
+      .photo-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 10px;
+      }
+
+      .photo-grid img {
+        width: 100%;
+        height: 289px;
+        border-radius: 8px;
+        transition: transform 0.3s;
+      }
+
+      .photo-grid img:hover {
+        transform: scale(1.05);
+      }
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 36px;
+        }
+
+        p {
+          font-size: 14px;
+        }
+
+        .gallery-container {
+          padding: 10px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        h1 {
+          font-size: 28px;
+        }
+
+        p {
+          font-size: 12px;
+        }
+      }
+
+      .contact-container {
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        margin: 0 30%;
+      }
+
+      h1 {
+        font-size: 36px;
+        color: #007bff;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 16px;
+        color: #555;
+        margin-bottom: 40px;
+      }
+
+      .contact-form {
+        width: 100%;
+      }
+
+      .input-field {
+        margin-bottom: 20px;
+        text-align: left;
+      }
+
+      .input-field label {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 14px;
+        color: #007bff;
+      }
+
+      .input-field input,
+      .input-field textarea {
+        width: 100%;
+        padding: 15px;
+        border: 2px solid #ffd1dc;
+        border-radius: 8px;
+        background-color: #f0f8ff;
+        font-size: 16px;
+        color: #333;
+        outline: none;
+        transition: border 0.3s;
+      }
+
+      .input-field input:focus,
+      .input-field textarea:focus {
+        border: 2px solid #ff69b4;
+      }
+
+      textarea {
+        resize: none;
+      }
+
+      .submit-btn {
+        background-color: #ff69b4;
+        color: #fff;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 8px;
+        font-size: 18px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+        display: inline-block;
+        width: 100%;
+        margin-top: 20px;
+      }
+
+      .submit-btn:hover {
+        background-color: #ff1493;
+        transform: scale(1.05);
+      }
+
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 28px;
+        }
+
+        p {
+          font-size: 14px;
+        }
+
+        .contact-container {
+          padding: 20px;
+        }
+
+        .submit-btn {
+          font-size: 16px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        h1 {
+          font-size: 24px;
+        }
+
+        p {
+          font-size: 13px;
+        }
+      }
+
+      .mission {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 100wh;
+        margin-top: 100vh;
+        background-color: rgb(238 232 232);
+      }
+
+      #mission-story,
+      #mission-vision {
+        box-sizing: border-box;
+        border: 2px solid black;
+        background-color: white;
+        color: lightpink;
+        max-width: 50%;
+        padding: 2em;
+        margin: 2em;
+      }
+      #second-div {
+        display: flex;
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+      }
+      .section {
+        flex: 1;
+        min-width: 250px;
+        padding: 20px;
+
+        border: 1px solid #ddd;
+        margin: 10px;
+        border-radius: 8px;
+        max-width: 700px;
+        background-color: #d8b7b7;
+        color: white;
+      }
+      .story-container {
+        margin: 5rem;
+        display: flex;
+      }
+
+      .cont-back {
+        background-color: rgb(252, 214, 226);
+        padding: 10px;
+      }
+
+      .story-container {
+        margin: 5rem;
+        display: flex;
+        /* color: black; */
+      }
+      .card-1 {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        margin: 0.5rem;
+        border: 2px solid #ffcaaf;
+        border-radius: 5px;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+      .card-1:hover {
+        transform: scale(1.05);
+      }
+      .imgBox {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
+      .imgBox img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+        cursor: default;
+        transition: box-shadow 0.3s ease;
+      }
+      .imgBox img:hover {
+        cursor: pointer;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 1);
+      }
+      .imgBox:hover + .content-1 {
+        display: block;
+      }
+
+      #story-title {
+        text-align: center;
+      }
+
+      .footer-container {
+        background-color: #000;
+        color: #fff;
+        padding: 40px 20px;
+        text-align: center;
+      }
+
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .footer-section {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 20px;
+      }
+
+      .footer-section h3 {
+        font-size: 20px;
+        color: #ffd700;
+        margin-bottom: 15px;
+      }
+
+      .footer-section p {
+        font-size: 14px;
+        line-height: 1.6;
+        color: #ccc;
+      }
+
+      .footer-links ul {
+        list-style-type: none;
+      }
+
+      .footer-links ul li {
+        margin-bottom: 10px;
+      }
+
+      .footer-links ul li a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .footer-links ul li a:hover {
+        color: #ffd700; /* Golden hover effect */
+      }
+
+      .footer-contact p {
+        font-size: 14px;
+        color: #ccc;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid #333;
+        padding-top: 20px;
+        margin-top: 20px;
+      }
+
+      .footer-bottom p {
+        font-size: 13px;
+        color: #bbb;
+      }
+
+      /* Responsive Footer */
+      @media (max-width: 768px) {
+        .footer-content {
+          flex-direction: column;
+          align-items: center;
+          text-align: left;
+        }
+
+        .footer-section {
+          margin-bottom: 30px;
+        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <iframe
       id="spline-background"
       src="https://my.spline.design/moonparallax-604e46fda0d01f806fe3b68ceda375c3/"
@@ -31,236 +826,313 @@
       max-height="100%"
     ></iframe>
     <div class="main">
-        <div class="nav">
-            <div class="logo">
-               SHESAFE.
-            </div>
-           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#mission">Our Mision</a></li>
-            <li><a href="#work">Work</a></li>
-            <li><a href="#insp">Our Inspiration</a></li>
-           </ul>
+      <div class="nav">
+        <div class="logo">SHESAFE.</div>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#mission">Our Mision</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#insp">Our Inspiration</a></li>
+        </ul>
+      </div>
+      <div class="land"></div>
+      <div class="show"></div>
+      <div class="main-content">
+        <div class="tagline">
+          <span class="f">SHE</span><span class="s">SAFE.</span>
         </div>
-        <div class="land">
-             
-        </div>
-        <div class="show">
-
-        </div>
-        <div class="main-content">
-         <div class="tagline"> <span class="f">SHE</span><span class="s">SAFE.</span> </div>
-         <div class="subline">Empowering Safety, Protecting Futures</div>
-        </div>
-   
-       
+        <div class="subline">Empowering Safety, Protecting Futures</div>
+      </div>
     </div>
 
     <div class="mission" id="mission">
-        <div class="container">
-            <div class="section">
-              <p style="color: #555">OUR STORY</p>
-              <scan>
-                At She Safe, we are committed to empower women by addressing the
-                challenges of safety in public spaces and at the workplace. Our
-                mission: To provide resources, tools, and a community that helps women
-                navigate these challenges with confidence. We believe that every woman
-                deserves to feel secure and respected in all areas of life.
-              </scan>
-            </div>
-      
-            <div class="section">
-              <p style="color: #555">OUR VISION: UNITY FOR SAFETY</p>
-              <scan>
-                Informative articles, safety tips, and innovative solutions aim to
-                raise awareness about the importance of gender equality and security.
-                Our platform is designed to foster a space where women can learn,
-                share, and support one another. Join us on this journey as we strive
-                to create safer environments, empowering women to thrive without fear.
-              </scan>
-            </div>
-          </div>
+      <div class="container">
+        <div class="section">
+          <p style="color: #555">OUR STORY</p>
+          <scan>
+            At She Safe, we are committed to empower women by addressing the
+            challenges of safety in public spaces and at the workplace. Our
+            mission: To provide resources, tools, and a community that helps
+            women navigate these challenges with confidence. We believe that
+            every woman deserves to feel secure and respected in all areas of
+            life.
+          </scan>
+        </div>
+
+        <div class="section">
+          <p style="color: #555">OUR VISION: UNITY FOR SAFETY</p>
+          <scan>
+            Informative articles, safety tips, and innovative solutions aim to
+            raise awareness about the importance of gender equality and
+            security. Our platform is designed to foster a space where women can
+            learn, share, and support one another. Join us on this journey as we
+            strive to create safer environments, empowering women to thrive
+            without fear.
+          </scan>
+        </div>
+      </div>
     </div>
     <div class="slider-container" id="work">
-        <div class="slider">
-            <div class="slide" id="slide1">
-                <div class="fact">
-                    <p class="stat-text">80% of women face harassment in public spaces.</p>
-                    <p class="source-text">Source: ActionAid UK</p>
-                </div>
-            </div>
-            <div class="slide" id="slide2">
-                <div class="fact">
-                    <p class="stat-text">95% of working women feel unsafe during travel.</p>
-                    <p class="source-text">Source: India Today</p>
-                </div>
-            </div>
-            <div class="slide" id="slide3">
-                <div class="fact">
-                    <p class="stat-text">Over 30,000 cases of workplace harassment reported in 2021.</p>
-                    <p class="source-text">Source: NCRB</p>
-                </div>
-            </div>
-            <div class="slide" id="slide4">
-                <div class="fact">
-                    <p class="stat-text">1 in 3 women experience domestic violence in their lifetime.</p>
-                    <p class="source-text">Source: WHO</p>
-                </div>
-            </div>
+      <div class="slider">
+        <div class="slide" id="slide1">
+          <div class="fact">
+            <p class="stat-text">
+              80% of women face harassment in public spaces.
+            </p>
+            <p class="source-text">Source: ActionAid UK</p>
+          </div>
         </div>
-
-        <!-- Arrows -->
-        <button class="prev" onclick="prevSlide()">&#10094;</button>
-        <button class="next" onclick="nextSlide()">&#10095;</button>
-
-        <!-- Dots -->
-        <div class="dots-container">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-            <span class="dot" onclick="currentSlide(4)"></span>
+        <div class="slide" id="slide2">
+          <div class="fact">
+            <p class="stat-text">
+              95% of working women feel unsafe during travel.
+            </p>
+            <p class="source-text">Source: India Today</p>
+          </div>
         </div>
+        <div class="slide" id="slide3">
+          <div class="fact">
+            <p class="stat-text">
+              Over 30,000 cases of workplace harassment reported in 2021.
+            </p>
+            <p class="source-text">Source: NCRB</p>
+          </div>
+        </div>
+        <div class="slide" id="slide4">
+          <div class="fact">
+            <p class="stat-text">
+              1 in 3 women experience domestic violence in their lifetime.
+            </p>
+            <p class="source-text">Source: WHO</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Arrows -->
+      <button class="prev" onclick="prevSlide()">&#10094;</button>
+      <button class="next" onclick="nextSlide()">&#10095;</button>
+
+      <!-- Dots -->
+      <div class="dots-container">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+      </div>
     </div>
 
     <script src="script.js"></script>
 
-
     <div class="laws-container">
-        <h1 style="color: #260016;">Women's Rights Laws</h1>
-        <div class="card-grid">
-            <div class="card" style="background-color: #4D0027;">
-                <div class="card-content">
-                    <h2>The Sexual Harassment of Women at Workplace Act, 2013</h2>
-                    <p>This act mandates the protection of women against sexual harassment in any workplace. It requires all employers to establish an Internal Complaints Committee (ICC).</p>
-                </div>
-            </div>
-            <div class="card" style="background-color: #990A42;">
-                <div class="card-content">
-                    <h2>The Maternity Benefit Act, 1961</h2>
-                    <p>Ensures paid maternity leave for women and mandates creche facilities in establishments with 50 or more employees.</p>
-                </div>
-            </div>
-            <div class="card" style="background-color: #BF1D53;">
-                <div class="card-content">
-                    <h2>Equal Remuneration Act, 1976</h2>
-                    <p>Guarantees equal pay for men and women for the same work without discrimination.</p>
-                </div>
-            </div>
-            <div class="card" style="background-color: #E45079;">
-                <div class="card-content">
-                    <h2>Indian Penal Code (IPC), Section 354</h2>
-                    <p>Protects women from acts of assault or criminal force with the intent to outrage modesty.</p>
-                </div>
-            </div>
-            <div class="card" style="background-color: #F788A0;">
-                <div class="card-content">
-                    <h2>Prohibition of Eve Teasing (Section 509)</h2>
-                    <p>Addresses verbal harassment or indecent gestures towards women in public spaces.</p>
-                </div>
-            </div>
-            <div class="card" style="background-color: #FEBFC9;">
-                <div class="card-content">
-                    <h2>Criminal Law (Amendment) Act, 2013</h2>
-                    <p>Introduced stricter penalties for crimes such as acid attacks, stalking, and voyeurism, and established a clearer framework for reporting harassment in public areas.</p>
-                </div>
-            </div>
+      <h1 style="color: #260016">Women's Rights Laws</h1>
+      <div class="card-grid">
+        <div class="card" style="background-color: #4d0027">
+          <div class="card-content">
+            <h2>The Sexual Harassment of Women at Workplace Act, 2013</h2>
+            <p>
+              This act mandates the protection of women against sexual
+              harassment in any workplace. It requires all employers to
+              establish an Internal Complaints Committee (ICC).
+            </p>
+          </div>
         </div>
+        <div class="card" style="background-color: #990a42">
+          <div class="card-content">
+            <h2>The Maternity Benefit Act, 1961</h2>
+            <p>
+              Ensures paid maternity leave for women and mandates creche
+              facilities in establishments with 50 or more employees.
+            </p>
+          </div>
+        </div>
+        <div class="card" style="background-color: #bf1d53">
+          <div class="card-content">
+            <h2>Equal Remuneration Act, 1976</h2>
+            <p>
+              Guarantees equal pay for men and women for the same work without
+              discrimination.
+            </p>
+          </div>
+        </div>
+        <div class="card" style="background-color: #e45079">
+          <div class="card-content">
+            <h2>Indian Penal Code (IPC), Section 354</h2>
+            <p>
+              Protects women from acts of assault or criminal force with the
+              intent to outrage modesty.
+            </p>
+          </div>
+        </div>
+        <div class="card" style="background-color: #f788a0">
+          <div class="card-content">
+            <h2>Prohibition of Eve Teasing (Section 509)</h2>
+            <p>
+              Addresses verbal harassment or indecent gestures towards women in
+              public spaces.
+            </p>
+          </div>
+        </div>
+        <div class="card" style="background-color: #febfc9">
+          <div class="card-content">
+            <h2>Criminal Law (Amendment) Act, 2013</h2>
+            <p>
+              Introduced stricter penalties for crimes such as acid attacks,
+              stalking, and voyeurism, and established a clearer framework for
+              reporting harassment in public areas.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="gallery-container">
-        <div class="photo-grid">
-            <img src="img-6.png" alt="Work 1">
-            <img src="img-5.png" alt="Work 2">
-            <img src="img-4.png" alt="Work 3">
-            <img src="img-3.png" alt="Work 4">
-            <img src="img-2.png" alt="Work 5">
-            <img src="img-1.png" alt="Work 6">
-        </div>
+      <div class="photo-grid">
+        <img src="img-6.png" alt="Work 1" />
+        <img src="img-5.png" alt="Work 2" />
+        <img src="img-4.png" alt="Work 3" />
+        <img src="img-3.png" alt="Work 4" />
+        <img src="img-2.webp" alt="Work 5" />
+        <img src="img-1.png" alt="Work 6" />
+      </div>
     </div>
     <div id="story-title">
-        <p style="font-size: 50px; margin: 0.2em; color: white;">OUR INSPIRATION</p>
-        <scan style="color: white;">
-          From Shadows to Strength: From Embracing Fear to Igniting Change
-        </scan>
-      </div>
-      <div class="story-container" id="insp">
-        <div class="card-1">
-          <div class="imgBox"><img src="1.png" /></div>
-          <div class="content-1" style="padding: 1em; display: none; color: white;">
-            Plot: A Bustling city, there lived a woman named Maya. A talented
-            graphic designer. Yet, one
-            evening, as she was returning home from a late-night client meeting,
-            she became victim to an attempted mugging. The incident left her
-            shaken, her sense of safety shattered like glass.
-          </div>
-        </div>
-        <div class="card-1">
-          <div class="imgBox"><img src="Untitled design (8).png"></div>
-          <div class="content-1" style="padding: 1em; display: none; color: white;">
-            For weeks, Maya suffered. The vibrant
-            colors became dull, and the world outside felt
-            a lurking predator. She avoided late nights, retreating into
-            the safety of her four walls. But within those walls, a fire
-            flickered—a determination to rise above the darkness that had engulfed
-            her.
-          </div>
-        </div>
-        <div class="card-1">
-          <div class="imgBox"><img src="3.png"></div>
-          <div class="content-1" style="padding: 1em; display: none; color: white;">
-            One fateful day, as she scrolled through her social media, Maya
-            stumbled upon a local self-defense workshop for women. It was a simple
-            ad, but it sparked a flicker of hope within her. She hesitated for a
-            moment, recalling the fear that had kept her silent for so long. But
-            then she remembered the vibrant woman she once was and the designs she
-            had brought to life. Inspired, she signed up.
-          </div>
+      <p style="font-size: 50px; margin: 0.2em; color: white">
+        OUR INSPIRATION
+      </p>
+      <scan style="color: white">
+        From Shadows to Strength: From Embracing Fear to Igniting Change
+      </scan>
+    </div>
+    <div class="story-container" id="insp">
+      <div class="card-1">
+        <div class="imgBox"><img src="1.png" /></div>
+        <div
+          class="content-1"
+          style="padding: 1em; display: none; color: white"
+        >
+          Plot: A Bustling city, there lived a woman named Maya. A talented
+          graphic designer. Yet, one evening, as she was returning home from a
+          late-night client meeting, she became victim to an attempted mugging.
+          The incident left her shaken, her sense of safety shattered like
+          glass.
         </div>
       </div>
-      <script>
-        document.querySelectorAll('.imgBox img').forEach((img, index) => {
-          img.addEventListener('click', function() {
-            // Toggle the 'clicked' class to add the shadow and pointer change
-            this.classList.toggle('clicked');
-      
-            // Find the content div within the same card and toggle its visibility
-            const contentDiv = this.closest('.card-1').querySelector('.content-1');
-            if (contentDiv.style.display === "none" || contentDiv.style.display === "") {
-              contentDiv.style.display = "block";
-            } else {
-              contentDiv.style.display = "none";
-            }
-          });
+      <div class="card-1">
+        <div class="imgBox"><img src="Untitled design (8).png" /></div>
+        <div
+          class="content-1"
+          style="padding: 1em; display: none; color: white"
+        >
+          For weeks, Maya suffered. The vibrant colors became dull, and the
+          world outside felt a lurking predator. She avoided late nights,
+          retreating into the safety of her four walls. But within those walls,
+          a fire flickered—a determination to rise above the darkness that had
+          engulfed her.
+        </div>
+      </div>
+      <div class="card-1">
+        <div class="imgBox"><img src="3.png" /></div>
+        <div
+          class="content-1"
+          style="padding: 1em; display: none; color: white"
+        >
+          One fateful day, as she scrolled through her social media, Maya
+          stumbled upon a local self-defense workshop for women. It was a simple
+          ad, but it sparked a flicker of hope within her. She hesitated for a
+          moment, recalling the fear that had kept her silent for so long. But
+          then she remembered the vibrant woman she once was and the designs she
+          had brought to life. Inspired, she signed up.
+        </div>
+      </div>
+    </div>
+    <script>
+      document.querySelectorAll(".imgBox img").forEach((img, index) => {
+        img.addEventListener("click", function () {
+          // Toggle the 'clicked' class to add the shadow and pointer change
+          this.classList.toggle("clicked");
+
+          // Find the content div within the same card and toggle its visibility
+          const contentDiv =
+            this.closest(".card-1").querySelector(".content-1");
+          if (
+            contentDiv.style.display === "none" ||
+            contentDiv.style.display === ""
+          ) {
+            contentDiv.style.display = "block";
+          } else {
+            contentDiv.style.display = "none";
+          }
         });
-      </script>
-      
-  <!-- Footer Section -->
-  <footer class="footer-container">
-    <div class="footer-content">
+      });
+      let currentIndex = 0;
+      const slides = document.querySelectorAll(".slide");
+      const dots = document.querySelectorAll(".dot");
+
+      function showSlide(index) {
+        if (index >= slides.length) {
+          currentIndex = 0;
+        } else if (index < 0) {
+          currentIndex = slides.length - 1;
+        } else {
+          currentIndex = index;
+        }
+
+        const offset = -currentIndex * 100; // Adjust the slide position
+        document.querySelector(
+          ".slider"
+        ).style.transform = `translateX(${offset}%)`;
+
+        // Update dots
+        dots.forEach((dot, idx) => {
+          dot.classList.toggle("active", idx === currentIndex);
+        });
+      }
+
+      function nextSlide() {
+        showSlide(currentIndex + 1);
+      }
+
+      function prevSlide() {
+        showSlide(currentIndex - 1);
+      }
+
+      function currentSlide(index) {
+        showSlide(index - 1);
+      }
+
+      // Initialize first slide
+      showSlide(currentIndex);
+    </script>
+
+    <!-- Footer Section -->
+    <footer class="footer-container">
+      <div class="footer-content">
         <div class="footer-section footer-about">
-            <h3>About Us</h3>
-            <p>She Safe is dedicated to empowering women by providing tools, resources, and support to ensure safety and equality. Together, we strive for a more secure future for every woman.</p>
+          <h3>About Us</h3>
+          <p>
+            She Safe is dedicated to empowering women by providing tools,
+            resources, and support to ensure safety and equality. Together, we
+            strive for a more secure future for every woman.
+          </p>
         </div>
         <div class="footer-section footer-links">
-            <h3>Quick Links</h3>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Our Work</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Contact Us</a></li>
-            </ul>
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Our Work</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
         </div>
         <div class="footer-section footer-contact">
-            <h3>Contact Us</h3>
-            <p>Email: info@shesafe.com</p>
-            <p>Phone: +91-123-456-7890</p>
+          <h3>Contact Us</h3>
+          <p>Email: info@shesafe.com</p>
+          <p>Phone: +91-123-456-7890</p>
         </div>
-    </div>
-    <div class="footer-bottom">
+      </div>
+      <div class="footer-bottom">
         <p>&copy; 2024 She Safe | All rights reserved</p>
-    </div>
-</footer>
-
-   
-</body>
+      </div>
+    </footer>
+  </body>
 </html>
